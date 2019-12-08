@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B515E70A-B651-49D2-B99F-F998E51B40FA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Game</RootNamespace>
+    <AssemblyName>Game</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\Binaries\Debug\Game\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;UNITY_EDITOR</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <BaseIntermediateOutputPath>..\..\..\Objs\Game\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\Binaries\Release\Game\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <BaseIntermediateOutputPath>..\..\..\Objs\Game\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FlexibleColorPicker, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\libraries\FlexibleColorPicker.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TextMeshPro.Unity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\libraries\TextMeshPro.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\libraries\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\..\..\libraries\UnityEngine.UI.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppData.cs" />
+    <Compile Include="Cheats.cs" />
+    <Compile Include="GameData.cs" />
+    <Compile Include="GameParams.cs" />
+    <Compile Include="Gameplay\Ball.cs" />
+    <Compile Include="Gameplay\GameView.cs" />
+    <Compile Include="Gameplay\Platform.cs" />
+    <Compile Include="Gameplay\Side.cs" />
+    <Compile Include="Gameplay\TagNames.cs" />
+    <Compile Include="GameSettings.cs" />
+    <Compile Include="InputListener.cs" />
+    <Compile Include="Launcher.cs" />
+    <Compile Include="MultiPlayer\MultiPlayerGameService.cs" />
+    <Compile Include="MultiPlayer\MultiplayerMatchModel.cs" />
+    <Compile Include="MultiPlayer\MultiPlayerNetService.cs" />
+    <Compile Include="MultiPlayer\Net.cs" />
+    <Compile Include="MultiPlayer\NetworkMatch.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SinglePlayer\GameService.cs" />
+    <Compile Include="SinglePlayer\Match.cs" />
+    <Compile Include="SinglePlayer\Model.cs" />
+    <Compile Include="UI\MainMenu.cs" />
+    <Compile Include="UI\Menu.cs" />
+    <Compile Include="UI\MultiplayerMenu.cs" />
+    <Compile Include="Utils\ActionsQueue.cs" />
+    <Compile Include="Utils\ColliderApplyRectSize.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\GameEngine\Unity.Utils\Unity.Utils.csproj">
+      <Project>{7c3ac5b0-15de-40f2-8741-c756514ec487}</Project>
+      <Name>Unity.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utilities\CsExtensions\CsExtensions.csproj">
+      <Project>{c9430cd6-3adc-40da-8f9a-c6483b1515d2}</Project>
+      <Name>CsExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Utilities\DataHelper\DataHelper.csproj">
+      <Project>{35c8fe4a-fdc6-4b79-9487-cd4ce5ecbd7c}</Project>
+      <Name>DataHelper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Ω_ThirdParty\Unity.TextMeshPro\TextMeshPro.Utils\TextMeshPro.Utils.csproj">
+      <Project>{efe94a55-3a65-4149-b2f3-0a3290c6dc8f}</Project>
+      <Name>TextMeshPro.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+</Project>
